@@ -33,11 +33,10 @@ const HomePage: FC = () => {
   return (
     <div className="my-3">
       <Fetcher isLoading={isLoading} error={error} canShow={programs != null}>
-
         <Col>
           {programs?.map(program => (
-            <Row>
-              <Card key={program.name} className="mb-4 p-0">
+            <Row key={program.name}>
+              <Card className="mb-4 p-0">
                 <Card.Body>
                   <Card.Title>{program.name}</Card.Title>
                   <Card.Text>{program.description}</Card.Text>
@@ -49,7 +48,6 @@ const HomePage: FC = () => {
             </Row>
           ))}
         </Col>
-
       </Fetcher>
     </div>
   );
