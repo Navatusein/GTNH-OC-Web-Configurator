@@ -15,7 +15,7 @@ interface IProgramDescriptor {
 const HomePage: FC = () => {
   const navigate = useNavigate();
 
-  const {data, isLoading, error} = useFetch("http://localhost:3000/programs.yml");
+  const {data, isLoading, error} = useFetch("https://raw.githubusercontent.com/Navatusein/GTNH-OC-Installer/refs/heads/main/programs.yml");
 
   const programs = useMemo((): IProgramDescriptor[]|null => {
     return data && parse(data).programs;
