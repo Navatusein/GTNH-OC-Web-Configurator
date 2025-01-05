@@ -47,7 +47,7 @@ const PreparedConfigModal: FC<IProps> = (props) => {
 
     setCommand(() => ({isLoading: true, command: "", error: null}));
 
-    axios.post("http://192.168.1.100:8000/?url=" + encodeURIComponent("https://paste-bin.xy/index.php"), data)
+    axios.post("https://cors-proxy.navatuseinlab.uk/?url=" + encodeURIComponent("https://paste-bin.xyz/index.php"), data)
       .then(result => {
         setCommand(() => ({
           isLoading: false,
