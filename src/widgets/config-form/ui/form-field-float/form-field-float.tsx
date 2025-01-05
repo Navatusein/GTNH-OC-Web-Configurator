@@ -12,16 +12,16 @@ const FormFieldFloat: FC<IFormProps<number>> = (props) => {
     const fieldDescriptor = props.fieldDescriptor as IFieldDescriptorFloat;
 
     if (fieldDescriptor.default)
-      props.onChange(parseFloat(fieldDescriptor.default));
+      props.onChange(fieldDescriptor.default);
 
     if (fieldDescriptor.max)
-      setMax(parseFloat(fieldDescriptor.max));
+      setMax(fieldDescriptor.max);
 
     if (fieldDescriptor.min)
-      setMin(parseFloat(fieldDescriptor.min));
+      setMin(fieldDescriptor.min);
 
     if (fieldDescriptor.step)
-      setStep(parseFloat(fieldDescriptor.step));
+      setStep(fieldDescriptor.step);
   }, []);
 
   return (

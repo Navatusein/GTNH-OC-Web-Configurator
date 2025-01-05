@@ -15,10 +15,10 @@ const FormFieldString: FC<IFormProps<string>> = (props) => {
       props.onChange(fieldDescriptor.default);
 
     if (fieldDescriptor.max)
-      setMax(parseInt(fieldDescriptor.max));
+      setMax(fieldDescriptor.max);
 
     if (fieldDescriptor.min)
-      setMin(parseInt(fieldDescriptor.min));
+      setMin(fieldDescriptor.min);
 
   }, []);
 

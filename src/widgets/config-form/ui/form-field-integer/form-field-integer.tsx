@@ -11,13 +11,13 @@ const FormFieldInteger: FC<IFormProps<number>> = (props) => {
     const fieldDescriptor = props.fieldDescriptor as IFieldDescriptorInteger;
 
     if (fieldDescriptor.default)
-      props.onChange(parseInt(fieldDescriptor.default));
+      props.onChange(fieldDescriptor.default);
 
     if (fieldDescriptor.max)
-      setMax(parseInt(fieldDescriptor.max));
+      setMax(fieldDescriptor.max);
 
     if (fieldDescriptor.min)
-      setMin(parseInt(fieldDescriptor.min));
+      setMin(fieldDescriptor.min);
 
   }, []);
 

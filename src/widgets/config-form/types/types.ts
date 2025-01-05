@@ -8,16 +8,16 @@ export interface IFormProps<T> {
 }
 
 export interface IFieldDescriptorInteger extends IFieldDescriptor {
-  max?: string;
-  min?: string;
-  default?: string;
+  max?: number;
+  min?: number;
+  default?: number;
 }
 
 export interface IFieldDescriptorFloat extends IFieldDescriptor {
-  max?: string;
-  min?: string;
-  step?: string;
-  default?: string;
+  max?: number;
+  min?: number;
+  step?: number;
+  default?: number;
 }
 
 export interface IFieldDescriptorAddress extends IFieldDescriptor {
@@ -27,8 +27,8 @@ export interface IFieldDescriptorAddress extends IFieldDescriptor {
 
 export interface IFieldDescriptorString extends IFieldDescriptor {
   default?: string;
-  max?: string;
-  min?: string;
+  max?: number;
+  min?: number;
 }
 
 export interface IFieldDescriptorSide extends IFieldDescriptor {
@@ -37,4 +37,8 @@ export interface IFieldDescriptorSide extends IFieldDescriptor {
 
 export interface IFieldDescriptorColor extends IFieldDescriptor {
   default?: string;
+}
+
+export interface IFieldDescriptorBoolean extends IFieldDescriptor {
+  default?: boolean;
 }
