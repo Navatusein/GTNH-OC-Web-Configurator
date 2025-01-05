@@ -23,7 +23,7 @@ const HomePage: FC = () => {
 
   const navigateTo = (configDescriptorUrl: string) => {
     navigate({
-      pathname: "/GTNH-OC-Web-Configurator/configurator",
+      pathname: "/configurator",
       search: createSearchParams({
         url: configDescriptorUrl
       }).toString()

@@ -5,7 +5,7 @@ import {BrowserRouter} from "react-router";
 import Router from "@/app/router.tsx";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/GTNH-OC-Web-Configurator">
     <Router/>
   </BrowserRouter>
 )
