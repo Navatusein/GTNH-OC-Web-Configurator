@@ -1,7 +1,7 @@
 import {defineConfig} from "vite"
 import path, { resolve } from "path"
 import react from "@vitejs/plugin-react"
-
+import {ghPages} from "vite-plugin-gh-pages"
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,7 +10,7 @@ export default defineConfig({
     port: 3000,
   },
   base: "/GTNH-OC-Web-Configurator/",
-  plugins: [react()],
+  plugins: [react(), ghPages()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
