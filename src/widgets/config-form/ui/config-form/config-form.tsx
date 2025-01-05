@@ -59,7 +59,7 @@ const ConfigForm: FC<IProps> = (props) => {
   };
 
   return (
-    <Form onSubmit={onSubmit} noValidate>
+    <Form onSubmit={onSubmit} noValidate autoComplete="off">
       {props.fieldGroups.map(fieldGroup => (
         <Card className="p-3 mb-3" key={fieldGroup.key}>
           <Card.Title>{fieldGroup.name}</Card.Title>
