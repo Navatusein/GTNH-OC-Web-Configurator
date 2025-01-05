@@ -1,7 +1,8 @@
 {
   "name": "gtnh-oc-web-configurator",
+  "homepage": "https://navatusein.github.io/GTNH-OC-Web-Configurator",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
