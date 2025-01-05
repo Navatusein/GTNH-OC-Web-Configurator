@@ -1,5 +1,5 @@
 import {FC, useMemo, useState} from "react";
-import {IConfigDescriptor} from "@/entities/config-descriptor";
+import {FieldTypes, IConfigDescriptor} from "@/entities/config-descriptor";
 import {ConfigForm} from "@/widgets/config-form";
 import {useLocation} from "react-router";
 import useFetch from "@/share/hooks/use-fetch";
@@ -24,7 +24,7 @@ const ConfiguratorPage: FC = () => {
     return data && parse(data).descriptor;
   }, [data]);
 
-  const onSubmit = (fields: [key: string, value: string|number][]) => {
+  const onSubmit = (fields: [key: string, value: FieldTypes][]) => {
     let config = configDescriptor!.configTemplate;
 
     fields.forEach(([key, value]) => {

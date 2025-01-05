@@ -1,4 +1,4 @@
 import {IConfigDescriptor, IFieldGroup} from "./types/config-descriptor";
-import {IFieldDescriptor} from "./types/field-descriptor";
+import {FieldTypes, IFieldDescriptor} from "./types/field-descriptor";
 
-export type {IFieldDescriptor, IConfigDescriptor, IFieldGroup};
+export type {IFieldDescriptor, IConfigDescriptor, IFieldGroup, FieldTypes};

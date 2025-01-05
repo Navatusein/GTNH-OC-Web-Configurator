@@ -5,6 +5,7 @@ export interface IFormProps<T> {
   isValidated: boolean;
   value: T,
   onChange: (value: T) => void;
+  setInvalidField: (value: boolean) => void;
 }
 
 export interface IFieldDescriptorInteger extends IFieldDescriptor {
@@ -24,6 +25,9 @@ export interface IFieldDescriptorAddress extends IFieldDescriptor {
   default?: string;
 }
 
+export interface IFieldDescriptorUrl extends IFieldDescriptor {
+  default?: string;
+}
 
 export interface IFieldDescriptorString extends IFieldDescriptor {
   default?: string;
@@ -41,4 +45,5 @@ export interface IFieldDescriptorColor extends IFieldDescriptor {
 
 export interface IFieldDescriptorBoolean extends IFieldDescriptor {
   default?: boolean;
+  class: "switch"|"checkbox";
 }
