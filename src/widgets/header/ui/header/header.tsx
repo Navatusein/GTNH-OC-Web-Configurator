@@ -12,7 +12,7 @@ const Header: FC = () => {
           <Navbar.Brand>OC Web Configurator</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto" onClick={() => navigate("/")}>
+            <Nav className="me-auto" onClick={() => navigate("/GTNH-OC-Web-Configurator/")}>
               <Nav.Link>Home</Nav.Link>
             </Nav>
           </Navbar.Collapse>

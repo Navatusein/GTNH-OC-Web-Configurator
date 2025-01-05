@@ -10,10 +10,10 @@ const Router: FC = () => {
   return (
     <Routes>
       <Route element={<BaseLayout/>}>
-        <Route index element={<HomePage/>}/>
-        <Route path="/configurator" element={<ConfiguratorPage/>}/>
-        <Route path="/404" element={<NotFoundPage/>}/>
-        <Route path='*' element={<Navigate to="/404" replace/>}/>
+        <Route path="/GTNH-OC-Web-Configurator/" element={<HomePage/>}/>
+        <Route path="/GTNH-OC-Web-Configurator/configurator" element={<ConfiguratorPage/>}/>
+        <Route path="/GTNH-OC-Web-Configurator/404" element={<NotFoundPage/>}/>
+        <Route path='*' element={<Navigate to="/GTNH-OC-Web-Configurator/404" replace/>}/>
       </Route>
     </Routes>
   );

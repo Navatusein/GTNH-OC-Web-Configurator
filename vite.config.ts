@@ -8,7 +8,7 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 3000,
   },
-  base: "/GTNH-OC-Infusion-Control/",
+  base: "/GTNH-OC-Web-Configurator/",
   plugins: [react()],
   resolve: {
     alias: {
