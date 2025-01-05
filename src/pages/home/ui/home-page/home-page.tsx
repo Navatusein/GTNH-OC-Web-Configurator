@@ -1,5 +1,5 @@
 import {FC, useMemo} from "react";
-import { Button, Card, ListGroup} from "react-bootstrap";
+import {Button, Card, Col, Row} from "react-bootstrap";
 import useFetch from "@/share/hooks/use-fetch.ts";
 import {parse} from "yaml";
 import {createSearchParams, useNavigate} from "react-router";
@@ -33,17 +33,23 @@ const HomePage: FC = () => {
   return (
     <div className="my-3">
       <Fetcher isLoading={isLoading} error={error} canShow={programs != null}>
-        <Card>
-          <ListGroup>
-            {programs?.map(program => (
-              <ListGroup.Item key={program.name} className="d-grid gap-2">
-                <h3>{program.name}</h3>
-                <p>{program.description}</p>
-                <Button onClick={() => navigateTo(program.configDescriptorUrl)}>Configure</Button>
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-        </Card>
+
+        <Col>
+          {programs?.map(program => (
+            <Row>
+              <Card key={program.name} className="mb-4 p-0">
+                <Card.Body>
+                  <Card.Title>{program.name}</Card.Title>
+                  <Card.Text>{program.description}</Card.Text>
+                  <div className="d-grid gap-2">
+                    <Button onClick={() => navigateTo(program.configDescriptorUrl)}>Configure</Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Row>
+          ))}
+        </Col>
+
       </Fetcher>
     </div>
   );

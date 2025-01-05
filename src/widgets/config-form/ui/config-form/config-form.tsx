@@ -64,7 +64,7 @@ const ConfigForm: FC<IProps> = (props) => {
         <Card className="p-3 mb-3" key={fieldGroup.key}>
           <Card.Title>{fieldGroup.name}</Card.Title>
           {fieldGroup.fields.map(field => {
-            const props= {
+            const props = {
               fieldDescriptor: field,
               isValidated: formValidate,
               value: formData[field.key] as never ?? "",
@@ -75,9 +75,11 @@ const ConfigForm: FC<IProps> = (props) => {
           })}
         </Card>
       ))}
-      <Button type="submit">Submit form</Button>
+      <div className="d-grid gap-2">
+        <Button type="submit">Submit form</Button>
+      </div>
     </Form>
-  );
+);
 };
 
 export default ConfigForm;
