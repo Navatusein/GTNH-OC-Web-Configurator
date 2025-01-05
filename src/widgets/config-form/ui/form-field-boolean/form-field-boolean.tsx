@@ -27,7 +27,7 @@ const FormFieldBoolean: FC<IFormProps<boolean>> = (props) => {
       />
       <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
       <Form.Control.Feedback type="invalid">
-        Please enter correct number
+        Please check this checkbox
       </Form.Control.Feedback>
     </Form.Group>
   );

@@ -54,7 +54,7 @@ const FormFieldColor: FC<IFormProps<string>> = (props) => {
       </Form.Select>
       <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
       <Form.Control.Feedback type="invalid">
-        Please select side
+        Please select color
       </Form.Control.Feedback>
     </Form.Group>
   );

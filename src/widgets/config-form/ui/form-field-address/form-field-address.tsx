@@ -47,6 +47,7 @@ const FormFieldAddress: FC<IFormProps<string>> = (props) => {
         value={props.value}
         required={props.value.length > 0 || props.fieldDescriptor.optional !== true}
         min={3}
+        autoComplete="devide-address"
         onChange={event => props.onChange(event.target.value)}
       />
       <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
