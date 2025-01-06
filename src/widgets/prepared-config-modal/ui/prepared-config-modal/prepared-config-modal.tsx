@@ -1,8 +1,9 @@
 import {Dispatch, FC, MouseEvent, SetStateAction, useState} from "react";
-import {Accordion, Alert, Button, Col, Modal, Row} from "react-bootstrap";
+import {Accordion, Button, Col, Modal, Row} from "react-bootstrap";
 import {ConfigHighlighter} from "@/features/config-highlighter";
 import axios from "axios";
 import {Fetcher} from "@/features/fetcher";
+import {CopyableAlert} from "@/features/copyable-alert";
 
 interface IProps {
   config: string;
@@ -91,9 +92,9 @@ const PreparedConfigModal: FC<IProps> = (props) => {
 
           <Row className="mx-0">
             <Fetcher isLoading={command.isLoading} error={command.error} canShow={command.command != ""}>
-              <Alert variant="primary">
+              <CopyableAlert variant="primary">
                 {command.command}
-              </Alert>
+              </CopyableAlert>
             </Fetcher>
           </Row>
         </Col>

@@ -1,15 +1,18 @@
-import {FC, useEffect} from "react";
+import {FC, useEffect, useState} from "react";
 import {Form} from "react-bootstrap";
-import {IFieldDescriptorSide, IFormProps} from "@/widgets/config-form";
+import {IFieldDescriptorSelect, IFieldDescriptorSelectOption, IFormProps} from "@/widgets/config-form";
 
-const FormFieldSide: FC<IFormProps<string>> = (props) => {
+const FormFieldSelect: FC<IFormProps<string>> = (props) => {
+
+  const [options, setOptions] = useState<IFieldDescriptorSelectOption[]>([])
 
   useEffect(() => {
-    const fieldDescriptor = props.fieldDescriptor as IFieldDescriptorSide;
+    const fieldDescriptor = props.fieldDescriptor as IFieldDescriptorSelect;
 
     if (fieldDescriptor.default)
       props.onChange(fieldDescriptor.default);
 
+    setOptions(fieldDescriptor.options);
   }, []);
 
   const isInvalid = () => {
@@ -34,13 +37,10 @@ const FormFieldSide: FC<IFormProps<string>> = (props) => {
         required={props.fieldDescriptor.optional !== true}
         onChange={event => props.onChange(event.target.value)}
       >
-        <option value="" disabled>Select side</option>
-        <option value="sides.north">North</option>
-        <option value="sides.south">South</option>
-        <option value="sides.west">West</option>
-        <option value="sides.east">East</option>
-        <option value="sides.up">Up</option>
-        <option value="sides.down">Down</option>
+        <option value="" disabled>Select option</option>
+        {options.map(option => (
+          <option value={option.value} key={option.label}>{option.label}</option>
+        ))}
       </Form.Select>
       <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
       <Form.Control.Feedback type="invalid">
@@ -50,4 +50,4 @@ const FormFieldSide: FC<IFormProps<string>> = (props) => {
   );
 };
 
-export default FormFieldSide;
+export default FormFieldSelect;

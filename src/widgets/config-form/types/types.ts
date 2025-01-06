@@ -47,3 +47,13 @@ export interface IFieldDescriptorBoolean extends IFieldDescriptor {
   default?: boolean;
   class: "switch"|"checkbox";
 }
+
+export interface IFieldDescriptorSelectOption {
+  label: string;
+  value: string;
+}
+
+export interface IFieldDescriptorSelect extends IFieldDescriptor {
+  default?: string;
+  options: IFieldDescriptorSelectOption[];
+}

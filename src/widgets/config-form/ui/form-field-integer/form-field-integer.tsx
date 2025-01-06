@@ -22,7 +22,7 @@ const FormFieldInteger: FC<IFormProps<number>> = (props) => {
   }, []);
 
   return (
-    <Form.Group controlId={props.fieldDescriptor.key} key={props.fieldDescriptor.key} className="mb-3">
+    <Form.Group controlId={props.fieldDescriptor.key} key={props.fieldDescriptor.key} className="mb-3 form-group">
       <Form.Label>{props.fieldDescriptor.label}</Form.Label>
       <Form.Control
         type="number"

@@ -4,3 +4,8 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.form-group:has(input:required, select:required) > .form-label:after {
+  content:" *";
+  color: crimson;
+}
