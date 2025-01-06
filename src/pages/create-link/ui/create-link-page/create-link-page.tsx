@@ -10,7 +10,7 @@ const CreateLinkPage: FC = () => {
     event.preventDefault();
     event.stopPropagation();
 
-    setResultLink(() => "http://192.168.1.100:3000/GTNH-OC-Web-Configurator/#/configurator?url=" + encodeURIComponent(descriptorLink))
+    setResultLink(() => "https://navatusein.github.io/GTNH-OC-Web-Configurator/#/configurator?url=" + encodeURIComponent(descriptorLink))
   }
 
   return (
