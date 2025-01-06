@@ -1,0 +1,14 @@
+.alert {
+  position: relative;
+  padding-right: 52px!important;
+}
+
+.copy-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  padding: 0;
+}
