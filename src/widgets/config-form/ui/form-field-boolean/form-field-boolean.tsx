@@ -17,12 +17,11 @@ const FormFieldBoolean: FC<IFormProps<boolean>> = (props) => {
   }, []);
 
   return (
-    <Form.Group controlId={props.fieldDescriptor.key} key={props.fieldDescriptor.key} className="mb-3">
+    <Form.Group controlId={props.fieldDescriptor.key} key={props.fieldDescriptor.key} className="mb-3 form-group">
       <Form.Check
         type={type}
         label={props.fieldDescriptor.label}
         checked={props.value}
-        required={props.fieldDescriptor.optional !== true}
         onChange={event => props.onChange(event.target.checked)}
       />
       <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
