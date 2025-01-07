@@ -13,7 +13,7 @@ const CopyableAlert: FC<IProps> = (props) => {
 
   const copyText = () => {
     if (window.isSecureContext) {
-      navigator.clipboard.writeText("123").then(() => {
+      navigator.clipboard.writeText(props.children ?? "").then(() => {
         showNotification("Copied!", {variant: "success"});
       })
     }
