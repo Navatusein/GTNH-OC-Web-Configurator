@@ -5,9 +5,7 @@ import {ConfiguratorPage} from "@/pages/configurator";
 import BaseLayout from "@/app/layouts/base-layout/base-layout.tsx";
 import {NotFoundPage} from "@/pages/not-found";
 import CreateLinkPage from "@/pages/create-link/ui/create-link-page/create-link-page.tsx";
-import {DEV_URL} from "@/share/config/config.ts";
-
-const IS_DEV = true;
+import {DEV_URL, IS_DEV} from "@/share/config/config";
 
 const Router: FC = () => {
   return (

@@ -1,8 +1,7 @@
 import {FC} from "react";
 import {Container, Nav, Navbar} from "react-bootstrap";
 import {useNavigate} from "react-router";
-
-const IS_DEV = true;
+import {IS_DEV} from "@/share/config/config";
 
 const Header: FC = () => {
   const navigate = useNavigate();
