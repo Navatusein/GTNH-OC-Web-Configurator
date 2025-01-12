@@ -5,6 +5,7 @@ export interface IFieldGroup {
   name: string;
   description?: string;
   fields: IFieldDescriptor[];
+  defaultOpen?: boolean;
 }
 
 export interface IConfigDescriptor {

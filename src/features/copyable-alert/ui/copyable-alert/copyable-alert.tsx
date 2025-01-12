@@ -11,9 +11,9 @@ interface IProps extends ComponentProps<typeof Alert>{
 const CopyableAlert: FC<IProps> = (props) => {
   const {showNotification} = useContext(NotificationContext);
 
-  const copyText = () => {
+  const copyText = (text: string) => {
     if (window.isSecureContext) {
-      navigator.clipboard.writeText(props.children ?? "").then(() => {
+      navigator.clipboard.writeText(text).then(() => {
         showNotification("Copied!", {variant: "success"});
       })
     }
@@ -24,7 +24,7 @@ const CopyableAlert: FC<IProps> = (props) => {
 
   return (
     <Alert {...props} className={`${styles.alert} ${props.className}`}>
-      <Button variant="outline-secondary" size="sm" className={styles.copyButton} onClick={() => copyText()}>
+      <Button variant="outline-secondary" size="sm" className={styles.copyButton} onClick={() => copyText(props.children ?? "")}>
         <BsCopy/>
       </Button>
       {props.children}

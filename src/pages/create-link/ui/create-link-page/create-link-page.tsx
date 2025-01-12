@@ -1,6 +1,7 @@
 import {FC, FormEvent, useState} from "react";
 import {Button, Card, Form} from "react-bootstrap";
 import {CopyableAlert} from "@/features/copyable-alert";
+import {BASE_URL} from "@/share/config/config";
 
 const CreateLinkPage: FC = () => {
   const [descriptorLink, setDescriptorLink] = useState("");
@@ -10,7 +11,7 @@ const CreateLinkPage: FC = () => {
     event.preventDefault();
     event.stopPropagation();
 
-    setResultLink(() => "https://navatusein.github.io/GTNH-OC-Web-Configurator/#/configurator?url=" + encodeURIComponent(descriptorLink))
+    setResultLink(() => BASE_URL + "/#/configurator?url=" + encodeURIComponent(descriptorLink))
   }
 
   return (
