@@ -8,8 +8,11 @@ import {
   IFieldDescriptorAddress,
   IFieldDescriptorUrl,
   IFieldDescriptorBoolean,
-  IFieldDescriptorSelectOption,
-  IFieldDescriptorSelect
+  ISelectOption,
+  IFieldDescriptorSelect,
+  IFieldDescriptorObjectList,
+  MultipleObjectDescriptor,
+  IFieldDescriptorMultipleObjectList
 } from "./types/types";
 import ConfigForm from "./ui/config-form/config-form";
 import FormFieldAddress from "./ui/form-field-address/form-field-address";
@@ -21,6 +24,10 @@ import FormFieldColor from "./ui/form-field-color/form-field-color";
 import FormFieldUrl from "./ui/form-field-url/form-field-url";
 import FormFieldBoolean from "./ui/form-field-boolean/form-field-boolean";
 import FormFieldSelect from "./ui/form-field-select/form-field-select";
+import FormField from "./ui/form-field/form-field";
+import FormFieldObjectList from "./ui/form-field-object-list/form-field-object-list";
+import FormFieldMultipleObjectList from "./ui/form-field-multiple-object-list/form-field-multiple-object-list";
+import FormStringCard from "./ui/form-string-card/form-string-card";
 
 export type {
   IFormProps,
@@ -32,11 +39,15 @@ export type {
   IFieldDescriptorAddress,
   IFieldDescriptorUrl,
   IFieldDescriptorBoolean,
-  IFieldDescriptorSelectOption,
+  ISelectOption,
   IFieldDescriptorSelect,
+  IFieldDescriptorObjectList,
+  MultipleObjectDescriptor,
+  IFieldDescriptorMultipleObjectList
 };
 export {
   ConfigForm,
+  FormField,
   FormFieldAddress,
   FormFieldInteger,
   FormFieldSide,
@@ -45,5 +56,8 @@ export {
   FormFieldColor,
   FormFieldUrl,
   FormFieldBoolean,
-  FormFieldSelect
+  FormFieldSelect,
+  FormFieldObjectList,
+  FormFieldMultipleObjectList,
+  FormStringCard
 };

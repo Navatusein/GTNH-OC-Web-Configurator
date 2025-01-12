@@ -1,10 +1,10 @@
 import {FC, useEffect, useState} from "react";
 import {Form} from "react-bootstrap";
-import {IFieldDescriptorSelect, IFieldDescriptorSelectOption, IFormProps} from "@/widgets/config-form";
+import {IFieldDescriptorSelect, ISelectOption, IFormProps} from "@/widgets/config-form";
 
 const FormFieldSelect: FC<IFormProps<string>> = (props) => {
 
-  const [options, setOptions] = useState<IFieldDescriptorSelectOption[]>([])
+  const [options, setOptions] = useState<ISelectOption[]>([])
 
   useEffect(() => {
     const fieldDescriptor = props.fieldDescriptor as IFieldDescriptorSelect;

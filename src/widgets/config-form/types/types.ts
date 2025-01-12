@@ -48,12 +48,34 @@ export interface IFieldDescriptorBoolean extends IFieldDescriptor {
   class: "switch"|"checkbox";
 }
 
-export interface IFieldDescriptorSelectOption {
+export interface ISelectOption {
   label: string;
   value: string;
 }
 
 export interface IFieldDescriptorSelect extends IFieldDescriptor {
   default?: string;
-  options: IFieldDescriptorSelectOption[];
+  options: ISelectOption[];
+}
+
+export interface IFieldDescriptorObjectList extends IFieldDescriptor {
+  fields: IFieldDescriptor[];
+  objectTemplate: string;
+  useSpaces?: boolean;
+  itemLabel?: string;
+}
+
+export interface MultipleObjectDescriptor {
+  key: string;
+  name: string;
+  label: string;
+  description?: string;
+  fields: IFieldDescriptor[];
+  objectTemplate: string;
+}
+
+export interface IFieldDescriptorMultipleObjectList extends IFieldDescriptor {
+  objects: MultipleObjectDescriptor[];
+  useSpaces?: boolean;
+  itemLabel?: string;
 }
