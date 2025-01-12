@@ -1,9 +1,10 @@
 import {Dispatch, FC, MouseEvent, SetStateAction, useState} from "react";
-import {Accordion, Button, Col, Modal, Row} from "react-bootstrap";
+import {Button, Col, Modal, Row} from "react-bootstrap";
 import {ConfigHighlighter} from "@/features/config-highlighter";
 import axios from "axios";
 import {Fetcher} from "@/features/fetcher";
 import {CopyableAlert} from "@/features/copyable-alert";
+import {CollapsibleCard} from "@/features/collapsible-card";
 
 interface IProps {
   config: string;
@@ -16,7 +17,6 @@ const PreparedConfigModal: FC<IProps> = (props) => {
     command: "",
     error: null
   });
-
 
   const close = () => {
     props.setConfig(() => "");
@@ -70,23 +70,20 @@ const PreparedConfigModal: FC<IProps> = (props) => {
       <Modal.Body>
         <Col className="d-flex flex-column gap-3">
           <Row>
-            <Accordion>
-              <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                  <Button variant="link" onClick={(event) => exportConfig(event, props.config)}>
-                    Download config file
-                  </Button>
-                </Accordion.Header>
-                <Accordion.Body>
-                  <ConfigHighlighter config={props.config}/>
-                </Accordion.Body>
-              </Accordion.Item>
-            </Accordion>
+            <CollapsibleCard title="Config file" defaultOpen={false}>
+              <ConfigHighlighter config={props.config}/>
+            </CollapsibleCard>
+          </Row>
+
+          <Row className="mx-0">
+            <Button variant="secondary" onClick={(event) => exportConfig(event, props.config)}>
+              Download config file
+            </Button>
           </Row>
 
           <Row className="mx-0">
             <Button variant="primary" onClick={() => generateCommand(props.config)}>
-              Generate download link
+              Generate download command
             </Button>
           </Row>
 
