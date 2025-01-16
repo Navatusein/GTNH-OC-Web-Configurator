@@ -43,7 +43,7 @@ const PreparedConfigModal: FC<IProps> = (props) => {
     data.append("submit", "Paste");
     data.append("paste_data", config);
     data.append("paste_expire_date", "1D");
-    data.append("visibility", "0");
+    data.append("visibility", "1");
     data.append("pass", "");
 
     setCommand(() => ({isLoading: true, command: "", error: null}));
