@@ -52,7 +52,7 @@ const PreparedConfigModal: FC<IProps> = (props) => {
       .then(result => {
         setCommand(() => ({
           isLoading: false,
-          command: `wget -fQ https://paste-bin.xyz/raw/${result.headers["location"]} config.lua`,
+          command: `wget -fq https://paste-bin.xyz/raw/${result.headers["location"]} config.lua`,
           error: null
         }));
       })
