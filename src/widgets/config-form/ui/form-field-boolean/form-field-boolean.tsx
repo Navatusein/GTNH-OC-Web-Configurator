@@ -1,6 +1,7 @@
 import {FC, useEffect, useState} from "react";
 import {IFieldDescriptorBoolean, IFormProps} from "@/widgets/config-form";
 import {Form} from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
 
 const FormFieldBoolean: FC<IFormProps<boolean>> = (props) => {
   const [type, setType] = useState<"checkbox"|"radio"|"switch">("checkbox")
@@ -24,7 +25,11 @@ const FormFieldBoolean: FC<IFormProps<boolean>> = (props) => {
         checked={props.value}
         onChange={event => props.onChange(event.target.checked)}
       />
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please check this checkbox
       </Form.Control.Feedback>

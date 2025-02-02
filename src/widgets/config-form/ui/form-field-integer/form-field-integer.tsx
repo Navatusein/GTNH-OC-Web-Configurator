@@ -1,6 +1,7 @@
 import {FC, useEffect, useState} from "react";
 import {IFieldDescriptorInteger, IFormProps} from "@/widgets/config-form";
 import {Form} from "react-bootstrap";
+import ReactMarkdown from "react-markdown";
 
 const FormFieldInteger: FC<IFormProps<number>> = (props) => {
 
@@ -32,7 +33,11 @@ const FormFieldInteger: FC<IFormProps<number>> = (props) => {
         required={props.fieldDescriptor.optional !== true}
         onChange={event => props.onChange(parseInt(event.target.value))}
       />
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please enter correct number
       </Form.Control.Feedback>

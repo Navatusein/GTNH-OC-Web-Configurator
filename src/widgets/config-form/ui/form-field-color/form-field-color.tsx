@@ -1,6 +1,7 @@
 import {FC, useEffect} from "react";
 import {Form} from "react-bootstrap";
 import {IFieldDescriptorColor, IFormProps} from "@/widgets/config-form";
+import ReactMarkdown from "react-markdown";
 
 const FormFieldColor: FC<IFormProps<string>> = (props) => {
 
@@ -52,7 +53,11 @@ const FormFieldColor: FC<IFormProps<string>> = (props) => {
         <option value="colors.red">Red</option>
         <option value="colors.black">Black</option>
       </Form.Select>
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please select color
       </Form.Control.Feedback>

@@ -2,6 +2,7 @@ import {FC, useEffect} from "react";
 import {Form} from "react-bootstrap";
 import {IFieldDescriptorUrl, IFormProps} from "@/widgets/config-form";
 import isUrlHttp from "is-url-http";
+import ReactMarkdown from "react-markdown";
 
 
 const FormFieldUrl: FC<IFormProps<string>> = (props) => {
@@ -36,7 +37,11 @@ const FormFieldUrl: FC<IFormProps<string>> = (props) => {
         required={props.value.length > 0 || props.fieldDescriptor.optional !== true}
         onChange={event => props.onChange(event.target.value)}
       />
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please enter correct url
       </Form.Control.Feedback>
