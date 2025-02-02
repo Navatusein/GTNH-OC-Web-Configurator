@@ -1,6 +1,7 @@
 import {FC, useEffect, useState} from "react";
 import {Form} from "react-bootstrap";
 import {IFieldDescriptorString, IFormProps} from "@/widgets/config-form";
+import ReactMarkdown from "react-markdown";
 
 
 const FormFieldString: FC<IFormProps<string>> = (props) => {
@@ -50,7 +51,11 @@ const FormFieldString: FC<IFormProps<string>> = (props) => {
         max={max}
         onChange={event => props.onChange(event.target.value)}
       />
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please enter correct string
       </Form.Control.Feedback>

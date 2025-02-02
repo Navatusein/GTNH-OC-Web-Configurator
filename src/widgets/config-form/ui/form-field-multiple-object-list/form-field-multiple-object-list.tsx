@@ -3,6 +3,7 @@ import {FieldTypes, IFieldData, IFieldDescriptor} from "@/entities/config-descri
 import {FormField, IFieldDescriptorMultipleObjectList, IFormProps} from "@/widgets/config-form";
 import {Button, Form, Stack} from "react-bootstrap";
 import {CollapsibleCard} from "@/features/collapsible-card";
+import ReactMarkdown from "react-markdown";
 
 interface IObjectType {
   label: string;
@@ -98,7 +99,11 @@ const FormFieldMultipleObjectList: FC<IFormProps<IFieldData[]>> = (props) => {
             <option value={option.index} key={option.label}>{option.label}</option>
           ))}
         </Form.Select>
-        <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+        <Form.Text className="text-muted">
+          <ReactMarkdown>
+            {props.fieldDescriptor.description}
+          </ReactMarkdown>
+        </Form.Text>
         <Form.Control.Feedback type="invalid">
           Please select type of {itemLabel}
         </Form.Control.Feedback>

@@ -1,6 +1,7 @@
 import {FC, useEffect, useState} from "react";
 import {Form} from "react-bootstrap";
 import {IFieldDescriptorSelect, ISelectOption, IFormProps} from "@/widgets/config-form";
+import ReactMarkdown from "react-markdown";
 
 const FormFieldSelect: FC<IFormProps<string>> = (props) => {
 
@@ -42,7 +43,11 @@ const FormFieldSelect: FC<IFormProps<string>> = (props) => {
           <option value={option.value} key={option.label}>{option.label}</option>
         ))}
       </Form.Select>
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please select side
       </Form.Control.Feedback>

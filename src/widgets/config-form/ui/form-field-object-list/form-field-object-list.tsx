@@ -3,6 +3,7 @@ import {FormField, IFieldDescriptorObjectList, IFormProps} from "@/widgets/confi
 import {FieldTypes, IFieldData, IFieldDescriptor} from "@/entities/config-descriptor";
 import {Button, Form, Stack} from "react-bootstrap";
 import {CollapsibleCard} from "@/features/collapsible-card";
+import ReactMarkdown from "react-markdown";
 
 const FormFieldObjectList: FC<IFormProps<IFieldData[]>> = (props) => {
   const [fieldsDescriptors, setFieldsDescriptors] = useState<IFieldDescriptor[]>([]);
@@ -79,7 +80,11 @@ const FormFieldObjectList: FC<IFormProps<IFieldData[]>> = (props) => {
         value={`Create new ${itemLabel.toLowerCase()}`}
         onClick={() => addObject()}
       />
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please create {itemLabel}
       </Form.Control.Feedback>

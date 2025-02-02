@@ -1,6 +1,7 @@
 import {FC, useEffect} from "react";
 import {Form} from "react-bootstrap";
 import {IFieldDescriptorSide, IFormProps} from "@/widgets/config-form";
+import ReactMarkdown from "react-markdown";
 
 const FormFieldSide: FC<IFormProps<string>> = (props) => {
 
@@ -42,7 +43,11 @@ const FormFieldSide: FC<IFormProps<string>> = (props) => {
         <option value="sides.up">Up</option>
         <option value="sides.down">Down</option>
       </Form.Select>
-      <Form.Text className="text-muted">{props.fieldDescriptor.description}</Form.Text>
+      <Form.Text className="text-muted">
+        <ReactMarkdown>
+          {props.fieldDescriptor.description}
+        </ReactMarkdown>
+      </Form.Text>
       <Form.Control.Feedback type="invalid">
         Please select side
       </Form.Control.Feedback>
