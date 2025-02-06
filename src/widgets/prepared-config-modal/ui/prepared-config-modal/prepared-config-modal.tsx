@@ -36,23 +36,13 @@ const PreparedConfigModal: FC<IProps> = (props) => {
   }
 
   const generateCommand = (config: string) => {
-    const data = new FormData();
-
-    data.append("title", "config-"+Date.now().toString());
-    data.append("format", "lua");
-    data.append("submit", "Paste");
-    data.append("paste_data", config);
-    data.append("paste_expire_date", "1D");
-    data.append("visibility", "1");
-    data.append("pass", "");
-
     setCommand(() => ({isLoading: true, command: "", error: null}));
 
-    axios.post("https://cors-proxy.navatuseinlab.uk/?url=" + encodeURIComponent("https://paste-bin.xyz/index.php"), data)
+    axios.post("https://cors-proxy.navatuseinlab.uk/tcp?address=termbin.com&port=9999", config)
       .then(result => {
         setCommand(() => ({
           isLoading: false,
-          command: `wget -fq https://paste-bin.xyz/raw/${result.headers["location"]} config.lua`,
+          command: `wget -fq ${result.data.toString().split("\n")[0]} config.lua`,
           error: null
         }));
       })
