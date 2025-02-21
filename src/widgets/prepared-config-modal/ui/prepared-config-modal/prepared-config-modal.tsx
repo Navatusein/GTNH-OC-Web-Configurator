@@ -38,11 +38,16 @@ const PreparedConfigModal: FC<IProps> = (props) => {
   const generateCommand = (config: string) => {
     setCommand(() => ({isLoading: true, command: "", error: null}));
 
-    axios.post("https://cors-proxy.navatuseinlab.uk/tcp?address=termbin.com&port=9999", config)
+    const buffer = new Blob([config], {type : 'text/plain'})
+
+    const formData = new FormData()
+    formData.append("f", buffer, "config.lua");
+
+    axios.post("https://cors-proxy.navatuseinlab.uk/proxy?url=https%3A%2F%2Fgbin.me", formData)
       .then(result => {
         setCommand(() => ({
           isLoading: false,
-          command: `wget -fq ${result.data.toString().split("\n")[0]} config.lua`,
+          command: `wget -fq https://${result.data.toString().split("\n")[0]} config.lua`,
           error: null
         }));
       })
@@ -75,6 +80,15 @@ const PreparedConfigModal: FC<IProps> = (props) => {
             <Button variant="primary" onClick={() => generateCommand(props.config)}>
               Generate download command
             </Button>
+          </Row>
+
+          <Row className="mx-0">
+            <p className="text-muted text-center">
+              <small>
+                If Generate download command doesn't work, create an issue or ping @navatusein in the official GTNH
+                Discord server
+              </small>
+            </p>
           </Row>
 
           <Row className="mx-0">
