@@ -7,8 +7,9 @@ const Footer: FC = () => {
     <footer>
       <Navbar expand="lg" className="bg-body-tertiary" sticky="bottom">
         <Container className="text-center">
-          <Navbar.Text>OC Web Configurator ©{new Date().getFullYear()} Created by <Link
-            to="https://github.com/Navatusein"> Navatusein</Link></Navbar.Text>
+          <Navbar.Text>
+            <Link to="https://github.com/Navatusein/GTNH-OC-Web-Configurator">OC Web Configurator</Link> ©{new Date().getFullYear()} Created by <Link to="https://github.com/Navatusein">Navatusein</Link>
+          </Navbar.Text>
         </Container>
       </Navbar>
     </footer>
