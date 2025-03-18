@@ -38,16 +38,15 @@ const PreparedConfigModal: FC<IProps> = (props) => {
   const generateCommand = (config: string) => {
     setCommand(() => ({isLoading: true, command: "", error: null}));
 
-    const buffer = new Blob([config], {type : 'text/plain'})
+    const data = {
+      content: config
+    };
 
-    const formData = new FormData()
-    formData.append("f", buffer, "config.lua");
-
-    axios.post("https://cors-proxy.navatuseinlab.uk/proxy?url=https%3A%2F%2Fgbin.me", formData)
+    axios.post("https://cors-proxy.navatuseinlab.uk/proxy?url=https%3A%2F%2Fpasty.lus.pm%2Fapi%2Fv2%2Fpastes", data)
       .then(result => {
         setCommand(() => ({
           isLoading: false,
-          command: `wget -fq https://${result.data.toString().split("\n")[0]} config.lua`,
+          command: `wget -fq https://pasty.lus.pm/${result.data.id}/raw config.lua`,
           error: null
         }));
       })
