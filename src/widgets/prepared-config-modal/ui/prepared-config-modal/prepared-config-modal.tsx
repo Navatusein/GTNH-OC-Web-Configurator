@@ -42,7 +42,7 @@ const PreparedConfigModal: FC<IProps> = (props) => {
       content: config
     };
 
-    axios.post("https://cors-proxy.navatuseinlab.uk/proxy?url=https%3A%2F%2Fpasty.lus.pm%2Fapi%2Fv2%2Fpastes", data)
+    axios.post("https://cors-proxy.navatusein.uk/proxy?url=https%3A%2F%2Fpasty.lus.pm%2Fapi%2Fv2%2Fpastes", data)
       .then(result => {
         setCommand(() => ({
           isLoading: false,
