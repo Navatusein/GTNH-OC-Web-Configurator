@@ -42,7 +42,7 @@ const PreparedConfigModal: FC<IProps> = (props) => {
       content: config
     };
 
-    axios.post("https://pasty.lus.pm/api/v2/pastes", data)
+    axios.post("https://cors-anywhere.herokuapp.com/https://pasty.lus.pm/api/v2/pastes", data)
       .then(result => {
         setCommand(() => ({
           isLoading: false,
