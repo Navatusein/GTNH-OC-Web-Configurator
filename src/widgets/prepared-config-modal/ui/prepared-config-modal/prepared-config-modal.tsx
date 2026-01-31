@@ -45,7 +45,7 @@ const PreparedConfigModal: FC<IProps> = (props) => {
       .then(result => {
         setCommand(() => ({
           isLoading: false,
-          command: `wget -fq ${result.data}?raw config.lua`,
+          command: `wget -fq ${result.data.trim()}?raw config.lua`,
           error: null
         }));
       })
