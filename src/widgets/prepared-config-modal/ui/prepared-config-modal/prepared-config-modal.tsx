@@ -38,15 +38,14 @@ const PreparedConfigModal: FC<IProps> = (props) => {
   const generateCommand = (config: string) => {
     setCommand(() => ({isLoading: true, command: "", error: null}));
 
-    const data = {
-      content: config
-    };
 
-    axios.post("https://cloudflare-cors-anywhere.boghdan-kutsulima.workers.dev/?https://pasty.lus.pm/api/v2/pastes", data)
+    axios.post("https://cloudflare-cors-anywhere.boghdan-kutsulima.workers.dev/?https://xi.pe/", config, {
+      headers: {'Content-Type': 'text/plain'}
+    })
       .then(result => {
         setCommand(() => ({
           isLoading: false,
-          command: `wget -fq https://pasty.lus.pm/${result.data.id}/raw config.lua`,
+          command: `wget -fq ${result.data}?raw config.lua`,
           error: null
         }));
       })
